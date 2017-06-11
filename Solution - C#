@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+class Solution {
+    static void Main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution */
+    
+        string n=Console.ReadLine();
+        int intn=Convert.ToInt32(n);
+        string[] InputPoints=new string[15];
+        string[] outputPoint=new string[15];
+        for(int i=0;i<intn;i++){
+        InputPoints[i]=Console.ReadLine();
+        }
+        string[] eachGroupOfPoints=new string[15];
+        for(var i=0;i<intn;i++){
+            eachGroupOfPoints=InputPoints[i].Split(new char[]{' '});
+        string rx=(((Convert.ToDecimal(eachGroupOfPoints[2])- Convert.ToDecimal(eachGroupOfPoints[0]))*2) + Convert.ToDecimal(eachGroupOfPoints[0])).ToString();
+            string ry=(((Convert.ToDecimal(eachGroupOfPoints[3])- Convert.ToDecimal(eachGroupOfPoints[1]))*2) + Convert.ToDecimal(eachGroupOfPoints[1])).ToString();
+            string r=rx+" "+ry;
+            
+            outputPoint[i]=r;
+        }
+        for(var i=0;i<intn;i++){
+        Console.WriteLine(outputPoint[i]);
+        }
+        
+    }
+}
